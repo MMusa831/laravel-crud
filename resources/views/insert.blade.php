@@ -47,10 +47,14 @@
         <tbody class="text-success bg-light fw-bold fs-4">
             @foreach($data as $item)
             <tr>
-                <td class="pt-4">{{ $item['id'] }}</td>
-                <td class="pt-4">{{ $item['product_name'] }}</td>
-                <td class="pt-4">{{ $item['product_price'] }}</td>
-                <td><img src="images/{{ $item['product_image'] }}" width="70px" height="70px" alt=""></td>
+                <form action="updatedelete">
+                    <td class="pt-4"><input type="hidden" name="id" value="{{ $item['id'] }}">{{ $item['id'] }}</td>
+                    <td class="pt-4"><input type="hidden" name="product_name" value="{{ $item['product_name'] }}">{{ $item['product_name'] }}</td>
+                    <td class="pt-4"><input type="hidden" name="product_price" value="{{ $item['product_price'] }}">{{ $item['product_price'] }}</td>
+                    <td><img src="images/{{ $item['product_image'] }}" width="70px" height="70px" alt=""></td>
+                    <td><button type="submit" class='btn' name='update' value="Edite"><i class='fa-solid fa-pencil' style='color: green;'></i></button></td>
+                    <td><button type="submit" class='btn' name='delete' value="remove"><i class='fa-solid fa-trash-can' style='color: red;'></i></button></td>
+                </form>
             </tr>
             @endforeach
         </tbody>

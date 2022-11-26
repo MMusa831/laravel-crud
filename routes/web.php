@@ -21,3 +21,6 @@ Route::view('/', 'insert');
 
 Route::post('insertData', [productController::class, 'insert']);
 Route::get('/', [productController::class, 'getData']);
+Route::view('update','update');
+Route::get('updatedelete', [productController::class, 'updateordelete']);
+Route::get('updateData', [productController::class, 'update']);
